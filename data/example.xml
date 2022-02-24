@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created with Liquid Technologies Online Tools 1.0 (https://www.liquid-technologies.com) -->
+<gems xmlns="http://www.example.org/gems"
+      xsi:schemaLocation="http://www.example.org/gems example.xsd"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <precious id="AAAA10621231" valuable="true">
+        <name>Agate</name>
+        <origin>America</origin>
+        <color>Green</color>
+        <transparency>79</transparency>
+        <weight>376.3</weight>
+        <cutting>12</cutting>
+        <get-date>1980-01-13</get-date>
+    </precious>
+    <precious id="AAAA30743074" valuable="false">
+        <name>Amethyst</name>
+        <origin>America</origin>
+        <color>Black</color>
+        <transparency>89</transparency>
+        <weight>476</weight>
+        <cutting>10</cutting>
+        <get-date>1994-02-12</get-date>
+    </precious>
+    <precious id="BBBB22572257" valuable="false">
+        <name>Aquamarine</name>
+        <origin>Africa</origin>
+        <color>Yellow</color>
+        <transparency>50</transparency>
+        <weight>231</weight>
+        <cutting>10</cutting>
+        <get-date>1979-05-03</get-date>
+    </precious>
+    <precious id="CCCC19651965" valuable="true">
+        <name>Sapphire</name>
+        <origin>America</origin>
+        <color>Yellow</color>
+        <transparency>43</transparency>
+        <weight>606.5</weight>
+        <cutting>14</cutting>
+        <get-date>2017-08-27</get-date>
+    </precious>
+    <semi-precious id="DDDD12141214" valuable="false">
+        <name>Moonstone</name>
+        <origin>Asia</origin>
+        <color>Red</color>
+        <transparency>2</transparency>
+        <weight>750</weight>
+    </semi-precious>
+    <semi-precious id="EEEE45645645" valuable="true" quality="high">
+        <name>Quartz</name>
+        <origin>Asia</origin>
+        <color>Green</color>
+        <transparency>20</transparency>
+        <weight>440</weight>
+    </semi-precious>
+    <precious id="FFFF12312232" valuable="false">
+        <name>Diamond</name>
+        <origin>America</origin>
+        <color>Red</color>
+        <transparency>71</transparency>
+        <weight>969</weight>
+        <cutting>10</cutting>
+        <get-date>1998-05-04</get-date>
+    </precious>
+    <semi-precious id="GGGG21592159" valuable="false">
+        <name>Zircon</name>
+        <origin>America</origin>
+        <color>Green</color>
+        <transparency>5</transparency>
+        <weight>306.9</weight>
+    </semi-precious>
+    <semi-precious id="LLLL20682068" valuable="true" quality="middle">
+        <name>Onyx</name>
+        <origin>Africa</origin>
+        <color>Black</color>
+        <transparency>26</transparency>
+        <weight>787</weight>
+    </semi-precious>
+    <precious id="KKKK24992499" valuable="false" quality="low">
+        <name>Emerald</name>
+        <origin>Australia and Oceania</origin>
+        <color>Purple</color>
+        <transparency>54</transparency>
+        <weight>825.1</weight>
+        <cutting>6</cutting>
+        <get-date>1986-04-01</get-date>
+    </precious>
+    <semi-precious id="MMMM45434543" valuable="true" quality="high">
+        <name>Amber</name>
+        <origin>America</origin>
+        <color>Red</color>
+        <transparency>24</transparency>
+        <weight>629</weight>
+    </semi-precious>
+</gems>

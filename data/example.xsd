@@ -1,0 +1,118 @@
+<?xml version = "1.0"  encoding="UTF-8"?>
+
+<xs:schema xmlns:xs = "http://www.w3.org/2001/XMLSchema"
+           targetNamespace = "http://www.example.org/gems"
+           xmlns:tns = "http://www.example.org/gems"
+           elementFormDefault = "qualified">
+
+   <xs:element name="name" type="tns:Name"/>
+   <xs:element name="origin" type="tns:Origin"/>
+   <xs:element name="color" type="tns:Color"/>
+   <xs:element name="transparency" type="tns:Transparency"/>
+   <xs:element name="cutting" type="tns:Cutting"/>
+   <xs:element name="weight" type="tns:Weight"/>
+   <xs:element name="get-date" type="xs:date"/>
+
+   <xs:element name="gem" type="tns:Gem" abstract="true"/>
+   <xs:element name="precious" type="tns:Precious" substitutionGroup="tns:gem"/>
+   <xs:element name="semi-precious" type="tns:Semi-precious" substitutionGroup="tns:gem"/>
+
+   <xs:element name="gems" type="tns:Gems"/>
+
+   <xs:simpleType name="Name">
+      <xs:restriction base="xs:string">
+         <xs:maxLength value="100"/>
+      </xs:restriction>
+   </xs:simpleType>
+
+   <xs:simpleType name="Origin">
+      <xs:restriction base="xs:string">
+         <xs:enumeration value="Australia and Oceania"/>
+         <xs:enumeration value="Asia"/>
+         <xs:enumeration value="America"/>
+         <xs:enumeration value="Africa"/>
+         <xs:enumeration value="Europe"/>
+      </xs:restriction>
+   </xs:simpleType>
+
+   <xs:simpleType name="Color">
+      <xs:restriction base="xs:string">
+         <xs:enumeration value="Black"/>
+         <xs:enumeration value="Red"/>
+         <xs:enumeration value="Yellow"/>
+         <xs:enumeration value="Green"/>
+         <xs:enumeration value="Purple"/>
+      </xs:restriction>
+   </xs:simpleType>
+
+   <xs:simpleType name="Transparency">
+      <xs:restriction base="xs:int">
+         <xs:minInclusive value="0"/>
+         <xs:maxInclusive value="100"/>
+      </xs:restriction>
+   </xs:simpleType>
+
+   <xs:simpleType name="Cutting">
+      <xs:restriction base="xs:int">
+         <xs:minInclusive value="4"/>
+         <xs:maxInclusive value="15"/>
+      </xs:restriction>
+   </xs:simpleType>
+
+   <xs:simpleType name="Weight">
+      <xs:restriction base="xs:double">
+         <xs:minInclusive value="0.1"/>
+         <xs:maxInclusive value="1000"/>
+      </xs:restriction>
+   </xs:simpleType>
+
+   <xs:simpleType name="GemId">
+      <xs:restriction base="xs:ID">
+         <xs:pattern value="[A-Z]{4}\d{8}"/>
+      </xs:restriction>
+   </xs:simpleType>
+
+   <xs:simpleType name="Quality">
+      <xs:restriction base="xs:string">
+         <xs:enumeration value="high"/>
+         <xs:enumeration value="low"/>
+         <xs:enumeration value="middle"/>
+      </xs:restriction>
+   </xs:simpleType>
+
+   <xs:complexType name="Gem">
+      <xs:sequence>
+         <xs:element ref="tns:name"/>
+         <xs:element ref="tns:origin"/>
+         <xs:element ref="tns:color"/>
+         <xs:element ref="tns:transparency"/>
+         <xs:element ref="tns:weight"/>
+      </xs:sequence>
+      <xs:attribute name="id" type="tns:GemId" use="required"/>
+      <xs:attribute name="valuable" type="xs:boolean" default="true"/>
+      <xs:attribute name="quality" type="tns:Quality" use="optional"/>
+   </xs:complexType>
+
+   <xs:complexType name="Semi-precious">
+      <xs:complexContent>
+         <xs:extension base="tns:Gem"/>
+      </xs:complexContent>
+   </xs:complexType>
+
+   <xs:complexType name="Precious">
+      <xs:complexContent>
+         <xs:extension base="tns:Gem">
+            <xs:sequence>
+               <xs:element ref="tns:cutting"/>
+               <xs:element ref="tns:get-date"/>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+
+   <xs:complexType name="Gems">
+      <xs:sequence>
+         <xs:element ref="tns:gem" minOccurs="8" maxOccurs="unbounded"/>
+      </xs:sequence>
+   </xs:complexType>
+</xs:schema>
