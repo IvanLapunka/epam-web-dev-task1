@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Created with Liquid Technologies Online Tools 1.0 (https://www.liquid-technologies.com) -->
 <gems xmlns="http://www.example.org/gems"
       xsi:schemaLocation="http://www.example.org/gems example.xsd"
       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
@@ -45,6 +44,7 @@
         <color>Red</color>
         <transparency>2</transparency>
         <weight>750</weight>
+        <beauty>fine</beauty>
     </semi-precious>
     <semi-precious id="EEEE45645645" valuable="true" quality="high">
         <name>Quartz</name>
@@ -52,6 +52,7 @@
         <color>Green</color>
         <transparency>20</transparency>
         <weight>440</weight>
+        <beauty>gorgeous</beauty>
     </semi-precious>
     <precious id="FFFF12312232" valuable="false">
         <name>Diamond</name>
@@ -68,6 +69,7 @@
         <color>Green</color>
         <transparency>5</transparency>
         <weight>306.9</weight>
+        <beauty>lovely</beauty>
     </semi-precious>
     <semi-precious id="LLLL20682068" valuable="true" quality="middle">
         <name>Onyx</name>
@@ -75,8 +77,9 @@
         <color>Black</color>
         <transparency>26</transparency>
         <weight>787</weight>
+        <beauty>lovely</beauty>
     </semi-precious>
-    <precious id="KKKK24992499" valuable="false" quality="low">
+    <precious quality="low" valuable="false" id="KKKK24992499" >
         <name>Emerald</name>
         <origin>Australia and Oceania</origin>
         <color>Purple</color>
@@ -91,5 +94,6 @@
         <color>Red</color>
         <transparency>24</transparency>
         <weight>629</weight>
+        <beauty>gorgeous</beauty>
     </semi-precious>
 </gems>

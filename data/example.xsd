@@ -5,12 +5,14 @@
            xmlns:tns = "http://www.example.org/gems"
            elementFormDefault = "qualified">
 
+
    <xs:element name="name" type="tns:Name"/>
    <xs:element name="origin" type="tns:Origin"/>
    <xs:element name="color" type="tns:Color"/>
    <xs:element name="transparency" type="tns:Transparency"/>
    <xs:element name="cutting" type="tns:Cutting"/>
    <xs:element name="weight" type="tns:Weight"/>
+   <xs:element name="beauty" type="tns:Beauty"/>
    <xs:element name="get-date" type="xs:date"/>
 
    <xs:element name="gem" type="tns:Gem" abstract="true"/>
@@ -80,6 +82,14 @@
       </xs:restriction>
    </xs:simpleType>
 
+   <xs:simpleType name="Beauty">
+      <xs:restriction base="xs:string">
+         <xs:enumeration value="fine"/>
+         <xs:enumeration value="lovely"/>
+         <xs:enumeration value="gorgeous"/>
+      </xs:restriction>
+   </xs:simpleType>
+
    <xs:complexType name="Gem">
       <xs:sequence>
          <xs:element ref="tns:name"/>
@@ -95,7 +105,11 @@
 
    <xs:complexType name="Semi-precious">
       <xs:complexContent>
-         <xs:extension base="tns:Gem"/>
+         <xs:extension base="tns:Gem">
+            <xs:sequence>
+               <xs:element ref="tns:beauty"/>
+            </xs:sequence>
+         </xs:extension>
       </xs:complexContent>
    </xs:complexType>
 
@@ -115,4 +129,5 @@
          <xs:element ref="tns:gem" minOccurs="8" maxOccurs="unbounded"/>
       </xs:sequence>
    </xs:complexType>
+
 </xs:schema>
