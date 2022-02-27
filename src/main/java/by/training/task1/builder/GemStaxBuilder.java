@@ -19,25 +19,17 @@ import java.io.File;
 import java.io.IOException;
 import java.time.LocalDate;
 import java.util.EnumMap;
-import java.util.HashSet;
-import java.util.Set;
 
-public class GemStaxBuilder {
-    Set<Gem> gemSet;
+public class GemStaxBuilder extends AbstractGemBuilder {
     XMLInputFactory factory;
     EnumMap<XmlGemTags, String> tagValues;
 
     public GemStaxBuilder() {
-        gemSet = new HashSet<>();
         factory = StAXInputFactory.newInstance();
         tagValues = new EnumMap<>(XmlGemTags.class);
     }
 
-    public Set<Gem> getGemSet() {
-        return gemSet;
-    }
-
-    public void buildGemsSet(String fullFilaPath) {
+    public void buildGemSet(String fullFilaPath) {
         try(XmlStreamReader streamReader = new XmlStreamReader(new File(fullFilaPath))) {
             final XMLStreamReader xmlStreamReader = factory.createXMLStreamReader(streamReader);
             while (xmlStreamReader.hasNext()) {

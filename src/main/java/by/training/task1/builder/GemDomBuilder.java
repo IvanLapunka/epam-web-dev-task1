@@ -20,20 +20,12 @@ import javax.xml.parsers.ParserConfigurationException;
 import java.io.File;
 import java.io.IOException;
 import java.time.LocalDate;
-import java.util.HashSet;
 import java.util.Optional;
-import java.util.Set;
 
-public class GemDomBuilder {
-    private Set<Gem> gemSet;
+public class GemDomBuilder extends AbstractGemBuilder{
     private DocumentBuilder builder;
 
-    public Set<Gem> getGemSet() {
-        return gemSet;
-    }
-
     public GemDomBuilder() {
-        gemSet = new HashSet<>();
         DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
         try {
             builder = factory.newDocumentBuilder();
@@ -42,7 +34,8 @@ public class GemDomBuilder {
         }
     }
 
-    public void buildGemsSet(String fullFilePath) {
+    @Override
+    public void buildGemSet(String fullFilePath) {
         try {
             final Document parse = builder.parse(new File(fullFilePath));
             final Element document = parse.getDocumentElement();
