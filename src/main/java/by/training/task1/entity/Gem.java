@@ -59,7 +59,7 @@ import java.util.StringJoiner;
     Precious.class,
     SemiPrecious.class
 })
-public class Gem {
+public abstract class Gem {
 
     @XmlElement(required = true)
     protected String name;

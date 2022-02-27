@@ -2,8 +2,6 @@ package by.training.task1.builder;
 
 import by.training.task1.entity.Gem;
 import org.xml.sax.SAXException;
-import org.xml.sax.SAXNotRecognizedException;
-import org.xml.sax.SAXNotSupportedException;
 import org.xml.sax.XMLReader;
 
 import javax.xml.parsers.ParserConfigurationException;
