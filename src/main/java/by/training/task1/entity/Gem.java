@@ -54,142 +54,54 @@ public abstract class Gem {
     @XmlAttribute(name = "quality")
     protected Quality quality;
 
-    /**
-     * Gets the value of the name property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
     public String getName() {
         return name;
     }
 
-    /**
-     * Sets the value of the name property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
     public void setName(String value) {
         this.name = value;
     }
 
-    /**
-     * Gets the value of the origin property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link Origin }
-     *     
-     */
     public Origin getOrigin() {
         return origin;
     }
 
-    /**
-     * Sets the value of the origin property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Origin }
-     *     
-     */
     public void setOrigin(Origin value) {
         this.origin = value;
     }
 
-    /**
-     * Gets the value of the color property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link Color }
-     *     
-     */
     public Color getColor() {
         return color;
     }
 
-    /**
-     * Sets the value of the color property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Color }
-     *     
-     */
     public void setColor(Color value) {
         this.color = value;
     }
 
-    /**
-     * Gets the value of the transparency property.
-     * 
-     */
     public int getTransparency() {
         return transparency;
     }
 
-    /**
-     * Sets the value of the transparency property.
-     * 
-     */
     public void setTransparency(int value) {
         this.transparency = value;
     }
 
-    /**
-     * Gets the value of the weight property.
-     * 
-     */
     public double getWeight() {
         return weight;
     }
 
-    /**
-     * Sets the value of the weight property.
-     * 
-     */
     public void setWeight(double value) {
         this.weight = value;
     }
 
-    /**
-     * Gets the value of the id property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
     public String getId() {
         return id;
     }
 
-    /**
-     * Sets the value of the id property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
     public void setId(String value) {
         this.id = value;
     }
 
-    /**
-     * Gets the value of the valuable property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link Boolean }
-     *     
-     */
     public boolean isValuable() {
         if (valuable == null) {
             return true;
@@ -198,38 +110,14 @@ public abstract class Gem {
         }
     }
 
-    /**
-     * Sets the value of the valuable property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Boolean }
-     *     
-     */
     public void setValuable(Boolean value) {
         this.valuable = value;
     }
 
-    /**
-     * Gets the value of the quality property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link Quality }
-     *     
-     */
     public Quality getQuality() {
         return quality;
     }
 
-    /**
-     * Sets the value of the quality property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Quality }
-     *     
-     */
     public void setQuality(Quality value) {
         this.quality = value;
     }

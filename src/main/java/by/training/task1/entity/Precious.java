@@ -28,36 +28,18 @@ public class Precious extends Gem {
     @XmlSchemaType(name = "date")
     protected LocalDate getDate;
 
-    /**
-     * Gets the value of the cutting property.
-     */
     public int getCutting() {
         return cutting;
     }
 
-    /**
-     * Sets the value of the cutting property.
-     */
     public void setCutting(int value) {
         this.cutting = value;
     }
 
-    /**
-     * Gets the value of the getDate property.
-     *
-     * @return possible object is
-     * {@link XMLGregorianCalendar }
-     */
     public LocalDate getGetDate() {
         return getDate;
     }
 
-    /**
-     * Sets the value of the getDate property.
-     *
-     * @param value allowed object is
-     *              {@link XMLGregorianCalendar }
-     */
     public void setGetDate(LocalDate value) {
         this.getDate = value;
     }

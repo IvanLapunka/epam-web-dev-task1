@@ -25,22 +25,10 @@ public class SemiPrecious extends Gem {
     @XmlSchemaType(name = "string")
     protected Beauty beauty;
 
-    /**
-     * Gets the value of the beauty property.
-     *
-     * @return possible object is
-     * {@link Beauty }
-     */
     public Beauty getBeauty() {
         return beauty;
     }
 
-    /**
-     * Sets the value of the beauty property.
-     *
-     * @param value allowed object is
-     *              {@link Beauty }
-     */
     public void setBeauty(Beauty value) {
         this.beauty = value;
     }
