@@ -1,5 +1,6 @@
-package by.training.task1.builder;
+package by.training.task1.validator;
 
+import by.training.task1.builder.GemErrorHandler;
 import org.xml.sax.SAXException;
 
 import javax.xml.XMLConstants;
