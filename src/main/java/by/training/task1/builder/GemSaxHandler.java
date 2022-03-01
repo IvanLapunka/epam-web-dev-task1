@@ -56,12 +56,12 @@ public class GemSaxHandler extends DefaultHandler {
     public void characters(char[] ch, int start, int length) throws SAXException {
         super.characters(ch, start, length);
         String tagValue = new String(ch, start, length).strip();
-        log.error(tagValue);
+//        log.error(tagValue);
 
         if (currentTag == null || !xmlGemTags.contains(currentTag)) {
             return;
         }
-        log.error(currentTag.getValue());
+//        log.error(currentTag.getValue());
 
         switch (currentTag) {
             case NAME: currentGem.setName(tagValue);
