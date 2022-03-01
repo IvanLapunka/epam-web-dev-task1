@@ -16,25 +16,6 @@ import javax.xml.bind.annotation.XmlType;
 import javax.xml.datatype.XMLGregorianCalendar;
 import java.time.LocalDate;
 
-
-/**
- * <p>Java class for Precious complex type.
- *
- * <p>The following schema fragment specifies the expected content contained within this class.
- *
- * <pre>
- * &lt;complexType name="Precious"&gt;
- *   &lt;complexContent&gt;
- *     &lt;extension base="{http://www.example.org/gems}Gem"&gt;
- *       &lt;sequence&gt;
- *         &lt;element ref="{http://www.example.org/gems}cutting"/&gt;
- *         &lt;element ref="{http://www.example.org/gems}get-date"/&gt;
- *       &lt;/sequence&gt;
- *     &lt;/extension&gt;
- *   &lt;/complexContent&gt;
- * &lt;/complexType&gt;
- * </pre>
- */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "Precious", propOrder = {
         "cutting",

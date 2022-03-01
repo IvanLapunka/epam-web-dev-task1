@@ -15,23 +15,6 @@ import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 
 
-/**
- * <p>Java class for Semi-precious complex type.
- *
- * <p>The following schema fragment specifies the expected content contained within this class.
- *
- * <pre>
- * &lt;complexType name="Semi-precious"&gt;
- *   &lt;complexContent&gt;
- *     &lt;extension base="{http://www.example.org/gems}Gem"&gt;
- *       &lt;sequence&gt;
- *         &lt;element ref="{http://www.example.org/gems}beauty"/&gt;
- *       &lt;/sequence&gt;
- *     &lt;/extension&gt;
- *   &lt;/complexContent&gt;
- * &lt;/complexType&gt;
- * </pre>
- */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "Semi-precious", propOrder = {
         "beauty"

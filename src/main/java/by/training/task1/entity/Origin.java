@@ -12,25 +12,6 @@ import javax.xml.bind.annotation.XmlEnum;
 import javax.xml.bind.annotation.XmlEnumValue;
 import javax.xml.bind.annotation.XmlType;
 
-
-/**
- * <p>Java class for Origin.
- * 
- * <p>The following schema fragment specifies the expected content contained within this class.
- * <p>
- * <pre>
- * &lt;simpleType name="Origin"&gt;
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *     &lt;enumeration value="Australia and Oceania"/&gt;
- *     &lt;enumeration value="Asia"/&gt;
- *     &lt;enumeration value="America"/&gt;
- *     &lt;enumeration value="Africa"/&gt;
- *     &lt;enumeration value="Europe"/&gt;
- *   &lt;/restriction&gt;
- * &lt;/simpleType&gt;
- * </pre>
- * 
- */
 @XmlType(name = "Origin")
 @XmlEnum
 public enum Origin {

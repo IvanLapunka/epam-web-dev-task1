@@ -21,32 +21,6 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import java.util.StringJoiner;
 
 
-/**
- * <p>Java class for Gem complex type.
- * 
- * <p>The following schema fragment specifies the expected content contained within this class.
- * 
- * <pre>
- * &lt;complexType name="Gem"&gt;
- *   &lt;complexContent&gt;
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
- *       &lt;sequence&gt;
- *         &lt;element ref="{http://www.example.org/gems}name"/&gt;
- *         &lt;element ref="{http://www.example.org/gems}origin"/&gt;
- *         &lt;element ref="{http://www.example.org/gems}color"/&gt;
- *         &lt;element ref="{http://www.example.org/gems}transparency"/&gt;
- *         &lt;element ref="{http://www.example.org/gems}weight"/&gt;
- *       &lt;/sequence&gt;
- *       &lt;attribute name="id" use="required" type="{http://www.example.org/gems}GemId" /&gt;
- *       &lt;attribute name="valuable" type="{http://www.w3.org/2001/XMLSchema}boolean" default="true" /&gt;
- *       &lt;attribute name="quality" type="{http://www.example.org/gems}Quality" /&gt;
- *     &lt;/restriction&gt;
- *   &lt;/complexContent&gt;
- * &lt;/complexType&gt;
- * </pre>
- * 
- * 
- */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "Gem", propOrder = {
     "name",
