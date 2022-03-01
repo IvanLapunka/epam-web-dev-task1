@@ -8,6 +8,9 @@ import by.training.task1.entity.Precious;
 import by.training.task1.entity.Quality;
 import by.training.task1.entity.SemiPrecious;
 import by.training.task1.entity.XmlGemTags;
+import by.training.task1.exception.XmlCustomException;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
@@ -23,6 +26,7 @@ import java.time.LocalDate;
 import java.util.Optional;
 
 public class GemDomBuilder extends AbstractGemBuilder{
+    private static Logger log = LogManager.getLogger();
     private DocumentBuilder builder;
 
     public GemDomBuilder() {
@@ -30,12 +34,12 @@ public class GemDomBuilder extends AbstractGemBuilder{
         try {
             builder = factory.newDocumentBuilder();
         } catch (ParserConfigurationException e) {
-            e.printStackTrace();
+            log.error(e.getMessage());
         }
     }
 
     @Override
-    public void buildGemSet(String fullFilePath) {
+    public void buildGemSet(String fullFilePath) throws XmlCustomException {
         try {
             final Document parse = builder.parse(new File(fullFilePath));
             final Element document = parse.getDocumentElement();
@@ -54,9 +58,11 @@ public class GemDomBuilder extends AbstractGemBuilder{
                 gemSet.add(gem);
             }
         } catch (SAXException e) {
-            e.printStackTrace();
+            log.error(e.getMessage());
+            throw new XmlCustomException("Sax exception was thrown", e);
         } catch (IOException e) {
-            e.printStackTrace();
+            log.error(e.getMessage());
+            throw new XmlCustomException("Ioexception was thrown", e);
         }
     }
 

@@ -8,7 +8,10 @@ import by.training.task1.entity.Precious;
 import by.training.task1.entity.Quality;
 import by.training.task1.entity.SemiPrecious;
 import by.training.task1.entity.XmlGemTags;
+import by.training.task1.exception.XmlCustomException;
 import com.sun.xml.fastinfoset.stax.factory.StAXInputFactory;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.codehaus.plexus.util.xml.XmlStreamReader;
 
 import javax.xml.stream.XMLInputFactory;
@@ -21,6 +24,7 @@ import java.time.LocalDate;
 import java.util.EnumMap;
 
 public class GemStaxBuilder extends AbstractGemBuilder {
+    Logger log = LogManager.getLogger();
     XMLInputFactory factory;
     EnumMap<XmlGemTags, String> tagValues;
 
@@ -29,7 +33,7 @@ public class GemStaxBuilder extends AbstractGemBuilder {
         tagValues = new EnumMap<>(XmlGemTags.class);
     }
 
-    public void buildGemSet(String fullFilaPath) {
+    public void buildGemSet(String fullFilaPath) throws XmlCustomException {
         try(XmlStreamReader streamReader = new XmlStreamReader(new File(fullFilaPath))) {
             final XMLStreamReader xmlStreamReader = factory.createXMLStreamReader(streamReader);
             while (xmlStreamReader.hasNext()) {
@@ -43,9 +47,11 @@ public class GemStaxBuilder extends AbstractGemBuilder {
                 }
             }
         } catch (IOException e) {
-            e.printStackTrace();
+            log.error(e.getMessage());
+            throw new XmlCustomException("There was an error during reading the file", e);
         } catch (XMLStreamException e) {
-            e.printStackTrace();
+            log.error(e.getMessage());
+            throw new XmlCustomException("There was an error during file parsing", e);
         }
     }
 
