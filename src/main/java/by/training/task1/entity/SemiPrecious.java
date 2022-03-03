@@ -8,21 +8,17 @@
 
 package by.training.task1.entity;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlSchemaType;
-import javax.xml.bind.annotation.XmlType;
-
-
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "Semi-precious", propOrder = {
-        "beauty"
-})
 public class SemiPrecious extends Gem {
 
-    @XmlElement(required = true)
-    @XmlSchemaType(name = "string")
+    public SemiPrecious() {
+
+    }
+
+    protected SemiPrecious(SemiPreciousBuilder builder) {
+        super(builder);
+        this.beauty = builder.beauty;
+    }
+
     protected Beauty beauty;
 
     public Beauty getBeauty() {
@@ -31,6 +27,25 @@ public class SemiPrecious extends Gem {
 
     public void setBeauty(Beauty value) {
         this.beauty = value;
+    }
+
+    public static class SemiPreciousBuilder extends GemBuilder<SemiPreciousBuilder> {
+
+        private Beauty beauty;
+
+        public SemiPreciousBuilder(String name) {
+            super(name);
+        }
+
+        public SemiPreciousBuilder withBeauty(Beauty beauty) {
+            this.beauty = beauty;
+            return this;
+        }
+
+        public SemiPrecious build() {
+            return new SemiPrecious(this);
+        }
+
     }
 
     @Override

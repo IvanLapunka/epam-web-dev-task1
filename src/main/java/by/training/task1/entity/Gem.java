@@ -10,14 +10,8 @@ package by.training.task1.entity;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlAttribute;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlID;
-import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlSeeAlso;
 import javax.xml.bind.annotation.XmlType;
-import javax.xml.bind.annotation.adapters.CollapsedStringAdapter;
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import java.util.StringJoiner;
 
 
@@ -33,26 +27,30 @@ import java.util.StringJoiner;
     Precious.class,
     SemiPrecious.class
 })
-public abstract class Gem {
-
-    @XmlElement(required = true)
+public class Gem implements Comparable<Gem> {
     protected String name;
-    @XmlElement(required = true)
-    @XmlSchemaType(name = "string")
     protected Origin origin;
-    @XmlElement(required = true)
-    @XmlSchemaType(name = "string")
     protected Color color;
     protected int transparency;
     protected double weight;
-    @XmlAttribute(name = "id", required = true)
-    @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
-    @XmlID
     protected String id;
-    @XmlAttribute(name = "valuable")
     protected Boolean valuable;
-    @XmlAttribute(name = "quality")
     protected Quality quality;
+
+    protected Gem() {
+
+    }
+
+    protected Gem(GemBuilder builder) {
+        this.name = builder.name;
+        this.origin = builder.origin;
+        this.color = builder.color;
+        this.transparency = builder.transparency;
+        this.weight = builder.weight;
+        this.id = builder.id;
+        this.valuable = builder.valuable;
+        this.quality = builder.quality;
+    }
 
     public String getName() {
         return name;
@@ -122,7 +120,75 @@ public abstract class Gem {
         this.quality = value;
     }
 
+    @Override
+    public int compareTo(Gem o) {
+        return this.getId().compareTo(o.getId());
+    }
 
+    public static class GemBuilder<SELF extends GemBuilder<SELF>> {
+        protected String name;
+        protected Origin origin;
+        protected Color color;
+        protected int transparency;
+        protected double weight;
+        protected String id;
+        protected Boolean valuable;
+        protected Quality quality;
+
+        public GemBuilder(GemBuilder builder) {
+            this.name = builder.name;
+            this.origin = builder.origin;
+            this.color = builder.color;
+            this.transparency = builder.transparency;
+            this.weight = builder.weight;
+            this.id = builder.id;
+            this.valuable = builder.valuable;
+            this.quality = builder.quality;
+        }
+
+        public GemBuilder(String name) {
+            this.name = name;
+        }
+
+        public GemBuilder withOrigin(Origin origin) {
+            this.origin = origin;
+            return this;
+        }
+
+        public GemBuilder withColor(Color color) {
+            this.color = color;
+            return this;
+        }
+
+        public GemBuilder withTransparency(int transparency) {
+            this.transparency = transparency;
+            return this;
+        }
+
+        public GemBuilder withWeight(double weight) {
+            this.weight = weight;
+            return this;
+        }
+
+        public GemBuilder withId(String id) {
+            this.id = id;
+            return this;
+        }
+
+        public GemBuilder withValuable(Boolean valuable) {
+            this.valuable = valuable;
+            return this;
+        }
+
+        public GemBuilder withQuality(Quality quality) {
+            this.quality = quality;
+            return this;
+        }
+
+        public Gem build() {
+            return new Gem(this);
+        }
+    }
 
     @Override
     public String toString() {

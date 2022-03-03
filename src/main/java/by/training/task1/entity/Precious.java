@@ -8,25 +8,21 @@
 
 package by.training.task1.entity;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlSchemaType;
-import javax.xml.bind.annotation.XmlType;
-import javax.xml.datatype.XMLGregorianCalendar;
 import java.time.LocalDate;
 
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "Precious", propOrder = {
-        "cutting",
-        "getDate"
-})
 public class Precious extends Gem {
 
     protected int cutting;
-    @XmlElement(name = "get-date", required = true)
-    @XmlSchemaType(name = "date")
     protected LocalDate getDate;
+
+    public Precious() {
+
+    }
+    private Precious(PreciousBuilder builder) {
+        super(builder);
+        this.cutting = builder.cutting;
+        this.getDate = builder.getDate;
+    }
 
     public int getCutting() {
         return cutting;
@@ -42,6 +38,30 @@ public class Precious extends Gem {
 
     public void setGetDate(LocalDate value) {
         this.getDate = value;
+    }
+
+    public static class PreciousBuilder extends GemBuilder<PreciousBuilder> {
+
+        private int cutting;
+        private LocalDate getDate;
+
+        public PreciousBuilder(String name) {
+            super(name);
+        }
+
+        public PreciousBuilder withCutting(int cutting) {
+            this.cutting = cutting;
+            return this;
+        }
+
+        public PreciousBuilder withGetDate(LocalDate date) {
+            this.getDate = date;
+            return this;
+        }
+
+        public Precious build() {
+            return new Precious(this);
+        }
     }
 
     @Override
@@ -66,9 +86,6 @@ public class Precious extends Gem {
 
     @Override
     public String toString() {
-        return "Precious{" +
-                "cutting=" + cutting +
-                ", getDate=" + getDate +
-                '}' + super.toString();
+        return "Precious{" + "cutting=" + cutting + ", getDate=" + getDate + '}' + super.toString();
     }
 }

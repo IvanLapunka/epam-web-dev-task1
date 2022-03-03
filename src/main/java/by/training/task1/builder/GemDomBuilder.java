@@ -43,8 +43,8 @@ public class GemDomBuilder extends AbstractGemBuilder{
         try {
             final Document parse = builder.parse(new File(fullFilePath));
             final Element document = parse.getDocumentElement();
-            final NodeList precious = document.getElementsByTagName(XmlGemTags.PRECIOUS.getValue());
             final NodeList semiprecious = document.getElementsByTagName(XmlGemTags.SEMIPRECIOUS.getValue());
+            final NodeList precious = document.getElementsByTagName(XmlGemTags.PRECIOUS.getValue());
 
             for (int i = 0; i < precious.getLength(); i++) {
                 final Element element = (Element) precious.item(i);
@@ -53,7 +53,7 @@ public class GemDomBuilder extends AbstractGemBuilder{
             }
 
             for (int i = 0; i < semiprecious.getLength(); i++) {
-                final Element element = (Element) precious.item(i);
+                final Element element = (Element) semiprecious.item(i);
                 Gem gem = buildGem(element);
                 gemSet.add(gem);
             }

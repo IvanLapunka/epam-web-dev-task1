@@ -1,6 +1,8 @@
 package by.training.task1.validator;
 
 import by.training.task1.builder.GemErrorHandler;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.xml.sax.SAXException;
 
 import javax.xml.XMLConstants;
@@ -12,6 +14,7 @@ import java.io.File;
 import java.io.IOException;
 
 public class XmlValidator {
+    Logger log = LogManager.getLogger();
     private static XmlValidator INSTANCE;
     private XmlValidator(){}
 
@@ -30,16 +33,17 @@ public class XmlValidator {
             validator.setErrorHandler(new GemErrorHandler());
             validator.validate(new StreamSource(new File(xmlFile)));
         } catch (SAXException e) {
-            e.printStackTrace();
+            log.error("There was errors during xml parsing", e);
             return false;
         } catch (IOException e) {
-            e.printStackTrace();
+            log.error("There were errors during xml reading", e);
+            return false;
         }
         return true;
     }
 
     public static void main(String[] args) {
         final XmlValidator instance = XmlValidator.getInstance();
-        System.out.println(instance.isValid("data/example_bad.xml", "data/example.xsd"));
+        System.out.println(instance.isValid("test_data/example_bad_element.xml", "data/example.xsd"));
     }
 }

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<gems xmlns="http://www.example.org/gems"
+      xsi:schemaLocation="http://www.example.org/gems example.xsd"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <precious id="AAAA10621231" valuable="true">
+        <name>Agate</name>
+        <origin>America</origin>
+        <color>Green</color>
+        <transparency>79</transparency>
+        <weight>376.3</weight>
+        <cutting>12</cutting>
+        <get-date>1980-01-13</get-date>
+    </precious>
+    <precious id="AAAA30743074" valuable="false">
+        <name>Amethyst</name>
+        <origin>America</origin>
+        <color>Black</color>
+        <transparency>89</transparency>
+        <weight>476</weight>
+        <cutting>10</cutting>
+        <get-date>1994-02-12</get-date>
+    </precious>
+    <semi-precious id="LLLL20682068" valuable="true" quality="middle">
+        <name>Onyx</name>
+        <origin>Africa</origin>
+        <color>Black</color>
+        <transparency>26</transparency>
+        <weight>787</weight>
+        <beauty>lovely</beauty>
+    </semi-precious>
+    <semi-precious id="MMMM45434543" valuable="true" quality="high">
+        <name>Amber</name>
+        <origin>America</origin>
+        <color>Red</color>
+        <transparency>24</transparency>
+        <weight>629</weight>
+        <beauty>gorgeous</beauty>
+    </semi-precious>
+</gems>

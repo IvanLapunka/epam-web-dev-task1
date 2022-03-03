@@ -11,16 +11,19 @@ public class GemErrorHandler implements ErrorHandler {
     @Override
     public void warning(SAXParseException exception) throws SAXException {
         log.warn(getErrorLine(exception) + " " + exception.getMessage());
+        throw new SAXException("Warning something went wrong", exception);
     }
 
     @Override
     public void error(SAXParseException exception) throws SAXException {
         log.error(getErrorLine(exception) + " " + exception.getMessage());
+        throw new SAXException("Error something went wrong", exception);
     }
 
     @Override
     public void fatalError(SAXParseException exception) throws SAXException {
         log.fatal(getErrorLine(exception) + " " + exception.getMessage());
+        throw new SAXException("Fatal error something went wrong", exception);
     }
 
     private String getErrorLine(SAXParseException exception) {
