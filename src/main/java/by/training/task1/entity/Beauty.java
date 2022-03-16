@@ -12,16 +12,12 @@ import javax.xml.bind.annotation.XmlEnum;
 import javax.xml.bind.annotation.XmlEnumValue;
 import javax.xml.bind.annotation.XmlType;
 
-@XmlType(name = "Beauty")
-@XmlEnum
 public enum Beauty {
 
-    @XmlEnumValue("fine")
     FINE("fine"),
-    @XmlEnumValue("lovely")
     LOVELY("lovely"),
-    @XmlEnumValue("gorgeous")
     GORGEOUS("gorgeous");
+
     private final String value;
 
     Beauty(String v) {

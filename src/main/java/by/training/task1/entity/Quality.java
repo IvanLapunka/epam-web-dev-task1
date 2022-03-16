@@ -12,15 +12,10 @@ import javax.xml.bind.annotation.XmlEnum;
 import javax.xml.bind.annotation.XmlEnumValue;
 import javax.xml.bind.annotation.XmlType;
 
-@XmlType(name = "Quality")
-@XmlEnum
 public enum Quality {
 
-    @XmlEnumValue("high")
     HIGH("high"),
-    @XmlEnumValue("low")
     LOW("low"),
-    @XmlEnumValue("middle")
     MIDDLE("middle");
     private final String value;
 

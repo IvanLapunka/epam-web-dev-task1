@@ -14,19 +14,6 @@ import javax.xml.bind.annotation.XmlSeeAlso;
 import javax.xml.bind.annotation.XmlType;
 import java.util.StringJoiner;
 
-
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "Gem", propOrder = {
-    "name",
-    "origin",
-    "color",
-    "transparency",
-    "weight"
-})
-@XmlSeeAlso({
-    Precious.class,
-    SemiPrecious.class
-})
 public class Gem implements Comparable<Gem> {
     protected String name;
     protected Origin origin;

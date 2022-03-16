@@ -12,19 +12,12 @@ import javax.xml.bind.annotation.XmlEnum;
 import javax.xml.bind.annotation.XmlEnumValue;
 import javax.xml.bind.annotation.XmlType;
 
-@XmlType(name = "Color")
-@XmlEnum
 public enum Color {
 
-    @XmlEnumValue("Black")
     BLACK("Black"),
-    @XmlEnumValue("Red")
     RED("Red"),
-    @XmlEnumValue("Yellow")
     YELLOW("Yellow"),
-    @XmlEnumValue("Green")
     GREEN("Green"),
-    @XmlEnumValue("Purple")
     PURPLE("Purple");
     private final String value;
 

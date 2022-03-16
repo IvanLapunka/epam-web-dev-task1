@@ -12,19 +12,13 @@ import javax.xml.bind.annotation.XmlEnum;
 import javax.xml.bind.annotation.XmlEnumValue;
 import javax.xml.bind.annotation.XmlType;
 
-@XmlType(name = "Origin")
-@XmlEnum
+
 public enum Origin {
 
-    @XmlEnumValue("Australia and Oceania")
     AUSTRALIA_AND_OCEANIA("Australia and Oceania"),
-    @XmlEnumValue("Asia")
     ASIA("Asia"),
-    @XmlEnumValue("America")
     AMERICA("America"),
-    @XmlEnumValue("Africa")
     AFRICA("Africa"),
-    @XmlEnumValue("Europe")
     EUROPE("Europe");
     private final String value;
 

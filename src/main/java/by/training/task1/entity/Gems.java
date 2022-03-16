@@ -16,13 +16,8 @@ import javax.xml.bind.annotation.XmlType;
 import java.util.ArrayList;
 import java.util.List;
 
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "Gems", propOrder = {
-    "gem"
-})
 public class Gems {
 
-    @XmlElementRef(name = "gem", namespace = "http://www.example.org/gems", type = JAXBElement.class)
     protected List<? extends Gem> gem;
 
     public List<? extends Gem> getGem() {
